@@ -11,9 +11,9 @@ https://youtu.be/BsjiVc-j8qs
 🎬 **Elenco video e versioni:**  
 
 # ' Qui modificherò il path quando avrò inserito il progetto in GitHub
-[Visualizza la pagina Video.html](https://htmlpreview.github.io/?https://github.com/List051/WinTest_Framework/blob/main/Video.html)
+[Visualizza la pagina Video.html](https://htmlpreview.github.io/?https://github.com/List051/FrameWork_WinItalPascal_2_0_2/blob/main/Video.html)
 
-Option download in local : https://List051.github.io/WinTest_Framework/video.html
+Option download in local : https://List051.github.io/FrameWork_WinItalPascal_2_0_2/video.html
 
 
 
