@@ -1,0 +1,246 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Demo Gestionale
+</name>
+</assembly>
+<members>
+<member name="T:CreaFiltroDvg.My.Resources.Resources">
+<summary>
+  Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.ResourceManager">
+<summary>
+  Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.Culture">
+<summary>
+  Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte le
+  ricerche di risorse eseguite utilizzando questa classe di risorse fortemente tipizzata.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.apri_emit">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.calcola">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.cerca">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.cercaFat">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.chek">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.destra">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.folders2">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.logo">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.logoEmittente">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.pdfico">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.reset">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.sinistra">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.social_page">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.stampa">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CreaFiltroDvg.My.Resources.Resources.tutti">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.ClientiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.FatturaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.MaterialeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.OrdiniDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.RisultatoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.ClientiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.FatturaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.MaterialeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.OrdiniRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.RisultatoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.ClientiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.FatturaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.MaterialeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.OrdiniRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSet.RisultatoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.ClientiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.FatturaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.MaterialeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.OrdiniTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.RisultatoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(CreaFiltroDvg.WinDBGdRDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(CreaFiltroDvg.WinDBGdRDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(CreaFiltroDvg.WinDBGdRDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager.UpdateAll(CreaFiltroDvg.WinDBGdRDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,59 @@
+2026-06-01 08:05:06 - Modifica del rigo NUOVO
+2026-06-01 12:11:33 - Modifica del rigo2026-06-02 08:13:38 - Modifica del rigo NUOVO BIS
+2026-06-02 14:00:07 - Aggiunta del rigo 1
+
+ID: 8
+Cliente: AGG_ _OTTO BIS → AGG OTTO BIS2
+---------------------
+
+2026-06-02 16:38:43 - Aggiunta del rigo modificato0
+
+
+2026-06-02 16:47:56 - Modifica del rigo PEPPINO
+2026-06-02 16:47:59 - Modifica del rigo PEPPINO
+2026-06-03 19:52:56 - Aggiunta del rigo modificato1
+
+ID: 8
+Indirizzo: OTTO → OTTO 2
+---------------------
+
+2026-06-03 20:08:31 - Aggiunta del rigo modificato0
+
+
+
+2026-06-06 05:27:01 - Modifica del rigo ARMANDO TRE CAFFE
+2026-06-06 19:45:18 - Aggiunta del rigo modificato1
+
+ID: 2
+Tel: 005544112 → 005544333
+---------------------
+
+ID: 6
+P_IVA: AAAAAAAAAAA → 00123456789
+---------------------
+
+2026-06-06 20:01:13 - Aggiunta del rigo modificato1
+
+ID: 8
+Tel: 888888 → 01234
+---------------------
+
+2026-06-06 20:02:56 - Aggiunta del rigo modificato1
+
+ID: 6
+Tel: 111111111 → 0252020
+---------------------
+
+2026-06-06 20:05:07 - Aggiunta del rigo modificato1
+
+ID: 7
+Tel: 33333333333 → 33444
+---------------------
+
+2026-06-06 20:07:21 - Modifica del rigo 15
+2026-06-06 20:10:51 - Aggiunta del rigo modificato1
+
+ID: 7
+Tel: 33444 → 334455
+---------------------
+
