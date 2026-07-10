@@ -1,5 +1,3 @@
-**README completo e finale**, con tutte le sezioni, immagini e spiegazioni integrate.  
-È pronto per essere pubblicato su GitHub o incluso nel tuo progetto VB.NET.
 
 # 🎬 Demo Video
 
