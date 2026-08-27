@@ -1,0 +1,22 @@
+{"logTime": "0730/081056", "session": "START"}
+{"logTime": "0730/081102", "session": "END"}
+{"logTime": "0730/081236", "session": "START"}
+{"logTime": "0730/081244", "level": "INFO", "location": "components\\sessions\\core\\command_storage_manager.cc:275 operator()", "message": "No valid session file found: SessionRestore"}
+{"logTime": "0730/081244", "level": "INFO", "location": "components\\sessions\\core\\command_storage_manager.cc:275 operator()", "message": "Last session file not found for SessionType : SessionRestore"}
+{"logTime": "0730/081255", "session": "END"}
+{"logTime": "0730/083831", "session": "START"}
+{"logTime": "0730/083854", "session": "END"}
+{"logTime": "0731/070726", "session": "START"}
+{"logTime": "0731/070801", "session": "END"}
+{"logTime": "0731/070808", "session": "START"}
+{"logTime": "0731/070834", "session": "END"}
+{"logTime": "0731/070836", "session": "START"}
+{"logTime": "0731/071001", "session": "END"}
+{"logTime": "0807/071649", "session": "START"}
+{"logTime": "0807/071653", "session": "END"}
+{"logTime": "0807/104738", "session": "START"}
+{"logTime": "0807/104741", "session": "END"}
+{"logTime": "0827/044151", "session": "START"}
+{"logTime": "0827/044210", "session": "END"}
+{"logTime": "0827/044711", "session": "START"}
+{"logTime": "0827/044715", "session": "END"}

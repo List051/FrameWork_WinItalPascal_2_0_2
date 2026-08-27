@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>WinTest Framework – Video Showcase</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #0d0d0d;
+    color: #eaeaea;
+  }
+
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #111);
+    border-bottom: 1px solid #222;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 600;
+  }
+
+  p.subtitle {
+    margin-top: 8px;
+    color: #9f9f9f;
+    font-size: 16px;
+  }
+
+  .grid {
+    max-width: 1300px;
+    margin: auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+  }
+
+  .card {
+    background: #1a1a1a;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    transition: transform .25s, box-shadow .25s;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  }
+
+  .thumb {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .thumb img {
+    width: 100%;
+    display: block;
+    transition: transform .35s;
+  }
+
+  .card:hover .thumb img {
+    transform: scale(1.07);
+  }
+
+  .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.55);
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    color: white;
+  }
+
+  .info {
+    padding: 18px;
+  }
+
+  .version {
+    font-size: 20px;
+    color: #4da3ff;
+    font-weight: 600;
+  }
+
+  .tag {
+    background: #2a2a2a;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-left: 8px;
+    color: #aaa;
+  }
+
+  .desc {
+    margin-top: 8px;
+    color: #cfcfcf;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  iframe {
+    width: 100%;
+    height: 260px;
+    border: none;
+  }
+
+  .changelog {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #161616;
+    padding: 25px;
+    border-radius: 12px;
+  }
+
+  .changelog h2 {
+    color: #4da3ff;
+  }
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>WinTest Framework</h1>
+  <p class="subtitle">Video Showcase • Version History</p>
+</header>
+
+<div class="grid">
+
+  <!-- CARD TEMPLATE -->
+
+  
+
+  <div class="card" onclick="playVideo(this, 'UboNebA_Irs')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/UboNebA_Irs/maxresdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v2.0 <span class="tag">WinItalPascal</span></div>
+      <div class="desc">Segue WinTest Senza Vincoli</div>
+    </div>
+  </div>  
+
+
+  <div class="card" onclick="playVideo(this, 'tn6D89N6eV4')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/tn6D89N6eV4/maxresdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v1.0 <span class="tag">WinItalPascal</span></div>
+      <div class="desc">Prima versione del framework SENZA VINCOLI.</div>
+    </div>
+  </div>  
+
+
+  <div class="card" onclick="playVideo(this, '3FkO8yAd0Mg')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/3FkO8yAd0Mg/maxresdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v3.0 <span class="tag">Release 2.0.5 WinItalPascal</span></div>
+      <div class="desc">Terza versione del framework con struttura base e test system.</div>
+    </div>
+  </div>
+  
+    <div class="card" onclick="playVideo(this, 'gMkEJsayTs0')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/gMkEJsayTs0/maxresdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v1.0 <span class="tag">Colora DataGrid</span></div>
+      <div class="desc">Versione 1.0 della WinContrGridLib</div>
+    </div>
+  </div>
+  
+  
+  <div class="card" onclick="playVideo(this, 'BsjiVc-j8qs')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/BsjiVc-j8qs/maxresdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v2.0 <span class="tag">Initial Release</span></div>
+      <div class="desc">Seconda versione del framework con struttura base e test system.</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="playVideo(this, '0zCklG1H4rA')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/0zCklG1H4rA/maxresdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v1.0 <span class="tag">No Noise</span></div>
+      <div class="desc">Versione senza rumore di fondo.</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="playVideo(this, 'UTgw-ERTfCk')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/UTgw-ERTfCk/maxresdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v1.0 <span class="tag">Initial Release</span></div>
+      <div class="desc">Prima versione del framework.</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="playVideo(this, 'T9ZkZ7E0MBM')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/T9ZkZ7E0MBM/hqdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v1.1 <span class="tag">Report</span></div>
+      <div class="desc">Report Elenchi - sistema test.</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="playVideo(this, 'HVxsXns8mbw')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/HVxsXns8mbw/hqdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v1.1 <span class="tag">Ordini</span></div>
+      <div class="desc">Aggiunta nuova funzione.</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="playVideo(this, 'aXCXBAoDL8Y')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/aXCXBAoDL8Y/hqdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v1.1 <span class="tag">Fatture</span></div>
+      <div class="desc">Aggiunta nuova funzione.</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="playVideo(this, '8SuFmr6Mpes')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/8SuFmr6Mpes/hqdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v1.1 <span class="tag">PopUp</span></div>
+      <div class="desc">Aggiunta nuova funzione.</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="playVideo(this, 'VXmUhjv854g')">
+    <div class="thumb">
+      <img src="https://img.youtube.com/vi/VXmUhjv854g/hqdefault.jpg">
+      <div class="play">▶</div>
+    </div>
+    <div class="info">
+      <div class="version">v1.1 <span class="tag">Centra Titolo</span></div>
+      <div class="desc">Aggiunta nuova funzione.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="changelog">
+  <h2>📌 Changelog</h2>
+  <ul>
+    <li><b>v2.0.1</b> – Inserito WinItalPascal 2.0.4 + bug fix</li>
+    <li><b>v1.1</b> – Ottimizzazione test runner + bug fix</li>
+    <li><b>v1.0</b> – Release iniziale del framework</li>
+  </ul>
+</div>
+
+<script>
+function playVideo(card, videoId) {
+  const iframe = document.createElement("iframe");
+  iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+  iframe.allow = "autoplay; fullscreen";
+  card.innerHTML = "";
+  card.appendChild(iframe);
+}
+</script>
+
+</body>
+</html>

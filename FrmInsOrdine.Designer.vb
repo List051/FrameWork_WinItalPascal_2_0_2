@@ -25,7 +25,25 @@ Partial Class FrmInsOrdine
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmInsOrdine))
         Me.OrdiniDataGrid = New System.Windows.Forms.DataGridView()
+        Me.IDOrdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDCliOrd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtaOrdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrezzoOrdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImportoOrdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OrdiniBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WinDBGdRDataSet = New CreaFiltroDvg.WinDBGdRDataSet()
         Me.ClientiDataGrid = New System.Windows.Forms.DataGridView()
+        Me.IdClientiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IndirizzoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CittaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProvDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CAPDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PIVADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RjBtnTuttiClienti = New RJCodeAdvance.RJControls.RJButton()
         Me.RJBtnSalva = New RJCodeAdvance.RJControls.RJButton()
         Me.OrdiniBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
@@ -53,39 +71,21 @@ Partial Class FrmInsOrdine
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.RjButton1 = New RJCodeAdvance.RJControls.RJButton()
-        Me.OrdiniBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.WinDBGdRDataSet = New CreaFiltroDvg.WinDBGdRDataSet()
-        Me.IdClientiDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClienteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IndirizzoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CittaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProvDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CAPDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PIVADataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClientiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IDOrdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDCliOrd = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.QtaOrdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrezzoOrdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ImportoOrdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OrdiniTableAdapter = New CreaFiltroDvg.WinDBGdRDataSetTableAdapters.OrdiniTableAdapter()
         Me.TableAdapterManager = New CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager()
         Me.FatturaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FatturaTableAdapter = New CreaFiltroDvg.WinDBGdRDataSetTableAdapters.FatturaTableAdapter()
         Me.ClientiTableAdapter = New CreaFiltroDvg.WinDBGdRDataSetTableAdapters.ClientiTableAdapter()
         CType(Me.OrdiniDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OrdiniBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WinDBGdRDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientiDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClientiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OrdiniBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OrdiniBindingNavigator.SuspendLayout()
         CType(Me.RjBtnResetta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RjBtnCerca, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RjBtnLog, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OrdiniBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.WinDBGdRDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClientiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FatturaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -103,6 +103,73 @@ Partial Class FrmInsOrdine
         Me.OrdiniDataGrid.Size = New System.Drawing.Size(1754, 552)
         Me.OrdiniDataGrid.TabIndex = 0
         '
+        'IDOrdDataGridViewTextBoxColumn
+        '
+        Me.IDOrdDataGridViewTextBoxColumn.DataPropertyName = "IDOrd"
+        Me.IDOrdDataGridViewTextBoxColumn.HeaderText = "IDOrd"
+        Me.IDOrdDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.IDOrdDataGridViewTextBoxColumn.Name = "IDOrdDataGridViewTextBoxColumn"
+        Me.IDOrdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IDOrdDataGridViewTextBoxColumn.Width = 80
+        '
+        'IDCliOrd
+        '
+        Me.IDCliOrd.DataPropertyName = "IDCliOrd"
+        Me.IDCliOrd.HeaderText = "IDCliOrd"
+        Me.IDCliOrd.MinimumWidth = 6
+        Me.IDCliOrd.Name = "IDCliOrd"
+        Me.IDCliOrd.Width = 80
+        '
+        'DataDataGridViewTextBoxColumn
+        '
+        Me.DataDataGridViewTextBoxColumn.DataPropertyName = "Data"
+        Me.DataDataGridViewTextBoxColumn.HeaderText = "Data"
+        Me.DataDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.DataDataGridViewTextBoxColumn.Name = "DataDataGridViewTextBoxColumn"
+        Me.DataDataGridViewTextBoxColumn.Width = 125
+        '
+        'MatDataGridViewTextBoxColumn
+        '
+        Me.MatDataGridViewTextBoxColumn.DataPropertyName = "Mat"
+        Me.MatDataGridViewTextBoxColumn.HeaderText = "Mat"
+        Me.MatDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.MatDataGridViewTextBoxColumn.Name = "MatDataGridViewTextBoxColumn"
+        Me.MatDataGridViewTextBoxColumn.Width = 650
+        '
+        'QtaOrdDataGridViewTextBoxColumn
+        '
+        Me.QtaOrdDataGridViewTextBoxColumn.DataPropertyName = "QtaOrd"
+        Me.QtaOrdDataGridViewTextBoxColumn.HeaderText = "QtaOrd"
+        Me.QtaOrdDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.QtaOrdDataGridViewTextBoxColumn.Name = "QtaOrdDataGridViewTextBoxColumn"
+        Me.QtaOrdDataGridViewTextBoxColumn.Width = 80
+        '
+        'PrezzoOrdDataGridViewTextBoxColumn
+        '
+        Me.PrezzoOrdDataGridViewTextBoxColumn.DataPropertyName = "PrezzoOrd"
+        Me.PrezzoOrdDataGridViewTextBoxColumn.HeaderText = "PrezzoOrd"
+        Me.PrezzoOrdDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PrezzoOrdDataGridViewTextBoxColumn.Name = "PrezzoOrdDataGridViewTextBoxColumn"
+        Me.PrezzoOrdDataGridViewTextBoxColumn.Width = 125
+        '
+        'ImportoOrdDataGridViewTextBoxColumn
+        '
+        Me.ImportoOrdDataGridViewTextBoxColumn.DataPropertyName = "ImportoOrd"
+        Me.ImportoOrdDataGridViewTextBoxColumn.HeaderText = "ImportoOrd"
+        Me.ImportoOrdDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.ImportoOrdDataGridViewTextBoxColumn.Name = "ImportoOrdDataGridViewTextBoxColumn"
+        Me.ImportoOrdDataGridViewTextBoxColumn.Width = 125
+        '
+        'OrdiniBindingSource
+        '
+        Me.OrdiniBindingSource.DataMember = "Ordini"
+        Me.OrdiniBindingSource.DataSource = Me.WinDBGdRDataSet
+        '
+        'WinDBGdRDataSet
+        '
+        Me.WinDBGdRDataSet.DataSetName = "WinDBGdRDataSet"
+        Me.WinDBGdRDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'ClientiDataGrid
         '
         Me.ClientiDataGrid.AutoGenerateColumns = False
@@ -116,6 +183,68 @@ Partial Class FrmInsOrdine
         Me.ClientiDataGrid.RowTemplate.Height = 24
         Me.ClientiDataGrid.Size = New System.Drawing.Size(1763, 196)
         Me.ClientiDataGrid.TabIndex = 1
+        '
+        'IdClientiDataGridViewTextBoxColumn
+        '
+        Me.IdClientiDataGridViewTextBoxColumn.DataPropertyName = "IdClienti"
+        Me.IdClientiDataGridViewTextBoxColumn.HeaderText = "IdClienti"
+        Me.IdClientiDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.IdClientiDataGridViewTextBoxColumn.Name = "IdClientiDataGridViewTextBoxColumn"
+        Me.IdClientiDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ClienteDataGridViewTextBoxColumn
+        '
+        Me.ClienteDataGridViewTextBoxColumn.DataPropertyName = "Cliente"
+        Me.ClienteDataGridViewTextBoxColumn.HeaderText = "Cliente"
+        Me.ClienteDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.ClienteDataGridViewTextBoxColumn.Name = "ClienteDataGridViewTextBoxColumn"
+        '
+        'IndirizzoDataGridViewTextBoxColumn
+        '
+        Me.IndirizzoDataGridViewTextBoxColumn.DataPropertyName = "Indirizzo"
+        Me.IndirizzoDataGridViewTextBoxColumn.HeaderText = "Indirizzo"
+        Me.IndirizzoDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.IndirizzoDataGridViewTextBoxColumn.Name = "IndirizzoDataGridViewTextBoxColumn"
+        '
+        'CittaDataGridViewTextBoxColumn
+        '
+        Me.CittaDataGridViewTextBoxColumn.DataPropertyName = "Citta"
+        Me.CittaDataGridViewTextBoxColumn.HeaderText = "Citta"
+        Me.CittaDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.CittaDataGridViewTextBoxColumn.Name = "CittaDataGridViewTextBoxColumn"
+        '
+        'ProvDataGridViewTextBoxColumn
+        '
+        Me.ProvDataGridViewTextBoxColumn.DataPropertyName = "Prov"
+        Me.ProvDataGridViewTextBoxColumn.HeaderText = "Prov"
+        Me.ProvDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.ProvDataGridViewTextBoxColumn.Name = "ProvDataGridViewTextBoxColumn"
+        '
+        'CAPDataGridViewTextBoxColumn
+        '
+        Me.CAPDataGridViewTextBoxColumn.DataPropertyName = "CAP"
+        Me.CAPDataGridViewTextBoxColumn.HeaderText = "CAP"
+        Me.CAPDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.CAPDataGridViewTextBoxColumn.Name = "CAPDataGridViewTextBoxColumn"
+        '
+        'TelDataGridViewTextBoxColumn
+        '
+        Me.TelDataGridViewTextBoxColumn.DataPropertyName = "Tel"
+        Me.TelDataGridViewTextBoxColumn.HeaderText = "Tel"
+        Me.TelDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.TelDataGridViewTextBoxColumn.Name = "TelDataGridViewTextBoxColumn"
+        '
+        'PIVADataGridViewTextBoxColumn
+        '
+        Me.PIVADataGridViewTextBoxColumn.DataPropertyName = "P_IVA"
+        Me.PIVADataGridViewTextBoxColumn.HeaderText = "P_IVA"
+        Me.PIVADataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PIVADataGridViewTextBoxColumn.Name = "PIVADataGridViewTextBoxColumn"
+        '
+        'ClientiBindingSource
+        '
+        Me.ClientiBindingSource.DataMember = "Clienti"
+        Me.ClientiBindingSource.DataSource = Me.WinDBGdRDataSet
         '
         'RjBtnTuttiClienti
         '
@@ -370,6 +499,7 @@ Partial Class FrmInsOrdine
         'TxtCercaCliente
         '
         Me.TxtCercaCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.TxtCercaCliente.Cursor = System.Windows.Forms.Cursors.Help
         Me.TxtCercaCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCercaCliente.Location = New System.Drawing.Point(610, 738)
         Me.TxtCercaCliente.Name = "TxtCercaCliente"
@@ -380,11 +510,11 @@ Partial Class FrmInsOrdine
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(522, 741)
+        Me.Label4.Location = New System.Drawing.Point(433, 741)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(70, 25)
+        Me.Label4.Size = New System.Drawing.Size(144, 25)
         Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Cerca"
+        Me.Label4.Text = "Cerca Cliente"
         '
         'Label5
         '
@@ -416,135 +546,6 @@ Partial Class FrmInsOrdine
         Me.RjButton1.UseVisualStyleBackColor = False
         Me.RjButton1.Visible = False
         '
-        'OrdiniBindingSource
-        '
-        Me.OrdiniBindingSource.DataMember = "Ordini"
-        Me.OrdiniBindingSource.DataSource = Me.WinDBGdRDataSet
-        '
-        'WinDBGdRDataSet
-        '
-        Me.WinDBGdRDataSet.DataSetName = "WinDBGdRDataSet"
-        Me.WinDBGdRDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'IdClientiDataGridViewTextBoxColumn
-        '
-        Me.IdClientiDataGridViewTextBoxColumn.DataPropertyName = "IdClienti"
-        Me.IdClientiDataGridViewTextBoxColumn.HeaderText = "IdClienti"
-        Me.IdClientiDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.IdClientiDataGridViewTextBoxColumn.Name = "IdClientiDataGridViewTextBoxColumn"
-        Me.IdClientiDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ClienteDataGridViewTextBoxColumn
-        '
-        Me.ClienteDataGridViewTextBoxColumn.DataPropertyName = "Cliente"
-        Me.ClienteDataGridViewTextBoxColumn.HeaderText = "Cliente"
-        Me.ClienteDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ClienteDataGridViewTextBoxColumn.Name = "ClienteDataGridViewTextBoxColumn"
-        '
-        'IndirizzoDataGridViewTextBoxColumn
-        '
-        Me.IndirizzoDataGridViewTextBoxColumn.DataPropertyName = "Indirizzo"
-        Me.IndirizzoDataGridViewTextBoxColumn.HeaderText = "Indirizzo"
-        Me.IndirizzoDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.IndirizzoDataGridViewTextBoxColumn.Name = "IndirizzoDataGridViewTextBoxColumn"
-        '
-        'CittaDataGridViewTextBoxColumn
-        '
-        Me.CittaDataGridViewTextBoxColumn.DataPropertyName = "Citta"
-        Me.CittaDataGridViewTextBoxColumn.HeaderText = "Citta"
-        Me.CittaDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.CittaDataGridViewTextBoxColumn.Name = "CittaDataGridViewTextBoxColumn"
-        '
-        'ProvDataGridViewTextBoxColumn
-        '
-        Me.ProvDataGridViewTextBoxColumn.DataPropertyName = "Prov"
-        Me.ProvDataGridViewTextBoxColumn.HeaderText = "Prov"
-        Me.ProvDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ProvDataGridViewTextBoxColumn.Name = "ProvDataGridViewTextBoxColumn"
-        '
-        'CAPDataGridViewTextBoxColumn
-        '
-        Me.CAPDataGridViewTextBoxColumn.DataPropertyName = "CAP"
-        Me.CAPDataGridViewTextBoxColumn.HeaderText = "CAP"
-        Me.CAPDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.CAPDataGridViewTextBoxColumn.Name = "CAPDataGridViewTextBoxColumn"
-        '
-        'TelDataGridViewTextBoxColumn
-        '
-        Me.TelDataGridViewTextBoxColumn.DataPropertyName = "Tel"
-        Me.TelDataGridViewTextBoxColumn.HeaderText = "Tel"
-        Me.TelDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.TelDataGridViewTextBoxColumn.Name = "TelDataGridViewTextBoxColumn"
-        '
-        'PIVADataGridViewTextBoxColumn
-        '
-        Me.PIVADataGridViewTextBoxColumn.DataPropertyName = "P_IVA"
-        Me.PIVADataGridViewTextBoxColumn.HeaderText = "P_IVA"
-        Me.PIVADataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PIVADataGridViewTextBoxColumn.Name = "PIVADataGridViewTextBoxColumn"
-        '
-        'ClientiBindingSource
-        '
-        Me.ClientiBindingSource.DataMember = "Clienti"
-        Me.ClientiBindingSource.DataSource = Me.WinDBGdRDataSet
-        '
-        'IDOrdDataGridViewTextBoxColumn
-        '
-        Me.IDOrdDataGridViewTextBoxColumn.DataPropertyName = "IDOrd"
-        Me.IDOrdDataGridViewTextBoxColumn.HeaderText = "IDOrd"
-        Me.IDOrdDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.IDOrdDataGridViewTextBoxColumn.Name = "IDOrdDataGridViewTextBoxColumn"
-        Me.IDOrdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IDOrdDataGridViewTextBoxColumn.Width = 80
-        '
-        'IDCliOrd
-        '
-        Me.IDCliOrd.DataPropertyName = "IDCliOrd"
-        Me.IDCliOrd.HeaderText = "IDCliOrd"
-        Me.IDCliOrd.MinimumWidth = 6
-        Me.IDCliOrd.Name = "IDCliOrd"
-        Me.IDCliOrd.Width = 80
-        '
-        'DataDataGridViewTextBoxColumn
-        '
-        Me.DataDataGridViewTextBoxColumn.DataPropertyName = "Data"
-        Me.DataDataGridViewTextBoxColumn.HeaderText = "Data"
-        Me.DataDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DataDataGridViewTextBoxColumn.Name = "DataDataGridViewTextBoxColumn"
-        Me.DataDataGridViewTextBoxColumn.Width = 125
-        '
-        'MatDataGridViewTextBoxColumn
-        '
-        Me.MatDataGridViewTextBoxColumn.DataPropertyName = "Mat"
-        Me.MatDataGridViewTextBoxColumn.HeaderText = "Mat"
-        Me.MatDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.MatDataGridViewTextBoxColumn.Name = "MatDataGridViewTextBoxColumn"
-        Me.MatDataGridViewTextBoxColumn.Width = 650
-        '
-        'QtaOrdDataGridViewTextBoxColumn
-        '
-        Me.QtaOrdDataGridViewTextBoxColumn.DataPropertyName = "QtaOrd"
-        Me.QtaOrdDataGridViewTextBoxColumn.HeaderText = "QtaOrd"
-        Me.QtaOrdDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.QtaOrdDataGridViewTextBoxColumn.Name = "QtaOrdDataGridViewTextBoxColumn"
-        Me.QtaOrdDataGridViewTextBoxColumn.Width = 80
-        '
-        'PrezzoOrdDataGridViewTextBoxColumn
-        '
-        Me.PrezzoOrdDataGridViewTextBoxColumn.DataPropertyName = "PrezzoOrd"
-        Me.PrezzoOrdDataGridViewTextBoxColumn.HeaderText = "PrezzoOrd"
-        Me.PrezzoOrdDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PrezzoOrdDataGridViewTextBoxColumn.Name = "PrezzoOrdDataGridViewTextBoxColumn"
-        Me.PrezzoOrdDataGridViewTextBoxColumn.Width = 125
-        '
-        'ImportoOrdDataGridViewTextBoxColumn
-        '
-        Me.ImportoOrdDataGridViewTextBoxColumn.DataPropertyName = "ImportoOrd"
-        Me.ImportoOrdDataGridViewTextBoxColumn.HeaderText = "ImportoOrd"
-        Me.ImportoOrdDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ImportoOrdDataGridViewTextBoxColumn.Name = "ImportoOrdDataGridViewTextBoxColumn"
-        Me.ImportoOrdDataGridViewTextBoxColumn.Width = 125
-        '
         'OrdiniTableAdapter
         '
         Me.OrdiniTableAdapter.ClearBeforeFill = True
@@ -557,7 +558,6 @@ Partial Class FrmInsOrdine
         Me.TableAdapterManager.FatturaTableAdapter = Nothing
         Me.TableAdapterManager.MaterialeTableAdapter = Nothing
         Me.TableAdapterManager.OrdiniTableAdapter = Nothing
-        'Me.TableAdapterManager.RisultatoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'FatturaBindingSource
@@ -599,16 +599,16 @@ Partial Class FrmInsOrdine
         Me.Name = "FrmInsOrdine"
         Me.Text = "FrmInsOrdine"
         CType(Me.OrdiniDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OrdiniBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WinDBGdRDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientiDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClientiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OrdiniBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OrdiniBindingNavigator.ResumeLayout(False)
         Me.OrdiniBindingNavigator.PerformLayout()
         CType(Me.RjBtnResetta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RjBtnCerca, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RjBtnLog, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OrdiniBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.WinDBGdRDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClientiBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FatturaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

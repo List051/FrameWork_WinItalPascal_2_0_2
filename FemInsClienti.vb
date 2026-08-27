@@ -1,17 +1,22 @@
 ﻿
 Imports System.Data.SqlClient
 Imports System.Configuration
-Imports CustomMessageBoxVB
+'Imports CustomMessageBoxVB
 Imports WinItalPascal
 
 
 Public Class FemInsClienti
+    ' Questi sono i campi privati per gestire i dati dei clienti e degli ordini
+    ' in questo modo posso usare:
+    '    dvClienti = New DataView(dtClienti)
+    '    dtClienti = DB.FillDataTable("SELECT * FROM Clienti")
 
     Private dtOrdini As DataTable
     Private dvOrdini As DataView
 
     Private dtClienti As DataTable
     Private dvClienti As DataView
+
     Private dtView As DataView
     Private bsFatture As New BindingSource
     Private bsOrdini As New BindingSource
@@ -27,20 +32,17 @@ Public Class FemInsClienti
         dtClienti = DB.FillDataTable("SELECT * FROM Clienti")
         ScreenUtility.FullScreen(Me)
         FrmTitolo.CTitolo(Me, "Gesionale Clienti")
-        colDgv()
+        ColoraDgv(OrdiniDataGrid, ClientiDataGrid)
         Dim imgSalva As Image = My.Resources.social_page
 
     End Sub
 
-    Sub colDgv()
-        GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
-        GridUtility.ColoraColonne(OrdiniDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
 
-    End Sub
 #Region "Filtra Ordini del cliente"
 
     Private Sub ClientiDataGrid_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles ClientiDataGrid.CellClick
         If e.RowIndex < 0 Then Exit Sub
+        ' If IdClienti Is Nothing Then Exit Sub
         Dim idCli As Integer =
             CInt(ClientiDataGrid.Rows(e.RowIndex).Cells("IDClienti").Value)
         ResetFiltro(OrdiniDataGrid)
@@ -53,16 +55,18 @@ Public Class FemInsClienti
         'colDgv()
     End Sub
 
-    Private Sub FiltraDgv(
-    dgv As DataGridView,
-    filtro As String)
 
-        Dim dv As DataView =
-        DirectCast(dgv.DataSource, DataView)
+    ' Questo è stato inserito in Libreria
+    'Private Sub FiltraDgv(
+    'dgv As DataGridView,
+    'filtro As String)
 
-        dv.RowFilter = filtro
+    '    Dim dv As DataView =
+    '    DirectCast(dgv.DataSource, DataView)
 
-    End Sub
+    '    dv.RowFilter = filtro
+
+    'End Sub
     Private Sub ResetFiltro(dgv As DataGridView)
         Dim dv As DataView = Nothing
 
@@ -102,7 +106,7 @@ Public Class FemInsClienti
             LogLeggiScrivi.ScriviLogMsg($"Cliente con Id {Id} " & "a nome di " & $"{Utente}" & " salvato correttamente")
 
             'LogLeggiScrivi.ScriviLogMsg($"Salvato {ClientiDataGrid.Rows.Count } record")
-            If RJMessageBox.Show("Vuoi cancellare record vecchi nel file di log?", "Conferma",
+            If IPMessageBox.Show("Vuoi cancellare record vecchi nel file di log?", "Conferma",
                    MessageBoxButtons.YesNo,
                    MessageBoxIcon.Question) = DialogResult.Yes Then
 
@@ -110,18 +114,18 @@ Public Class FemInsClienti
 
             End If
             ' Per leggere Avviso corto va bene
-            Dim leggiLog = RJMessageBox.Show(LogReader.ReadLog(), "Apro il file di log")
+            Dim leggiLog = IPMessageBox.Show(LogReader.ReadLog(), "Apro il file di log")
         Catch ex As Exception
             LogLeggiScrivi.ScriviLog("File Log", ex)   ' con nuovo file di Log
             FrameworkLogger.LogError(ex, "SALVA Clienti") ' Alternativa
-            RJMessageBox.Show(
+            IPMessageBox.Show(
             "ERRORE SALVATAGGIO: " & ex.Message,
             "Errore",
             MessageBoxButtons.OK,
             MessageBoxIcon.Error)
         End Try
         ' coloro i datagrid 
-        colDgv()
+        ColoraDgv(OrdiniDataGrid, ClientiDataGrid)
     End Sub
 
     Private Function VerificaDatiClienti() As Boolean
@@ -134,7 +138,7 @@ Public Class FemInsClienti
 
                 If cap.Length <> 5 OrElse Not cap.All(AddressOf Char.IsDigit) Then
 
-                    RJMessageBox.Show("Errore: il CAP deve contenere 5 cifre numeriche." &
+                    IPMessageBox.Show("Errore: il CAP deve contenere 5 cifre numeriche." &
                        vbCrLf & "Riga: " & r.Index + 1, "Errore inserimento",
                     MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -146,7 +150,7 @@ Public Class FemInsClienti
 
                 If piva = "" Then
 
-                    RJMessageBox.Show("Errore: il campo P.IVA / Codice Fiscale non può essere vuoto." &
+                    IPMessageBox.Show("Errore: il campo P.IVA / Codice Fiscale non può essere vuoto." &
                        vbCrLf & "Riga: " & r.Index + 1, "Errore inserimento",
                     MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -157,7 +161,7 @@ Public Class FemInsClienti
                 If piva.All(AddressOf Char.IsDigit) Then
                     If piva.Length <> 11 Then
 
-                        RJMessageBox.Show("Errore: la Partita IVA deve contenere esattamente 11 cifre numeriche" &
+                        IPMessageBox.Show("Errore: la Partita IVA deve contenere esattamente 11 cifre numeriche" &
                        vbCrLf & "Riga: " & r.Index + 1, "Errore inserimento",
                     MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -167,7 +171,7 @@ Public Class FemInsClienti
                     ' LETTERE + NUMERI → deve essere lungo 16
                 ElseIf piva.Any(AddressOf Char.IsLetter) Then
                     If piva.Length <> 16 Then
-                        RJMessageBox.Show("Errore: il Codice Fiscale deve contenere esattamente 16 caratteri alfanumerici.  " &
+                        IPMessageBox.Show("Errore: il Codice Fiscale deve contenere esattamente 16 caratteri alfanumerici.  " &
                        vbCrLf & "Riga: " & r.Index + 1, "Errore inserimento",
                     MessageBoxButtons.OK, MessageBoxIcon.Error)
                         Return False
@@ -176,23 +180,12 @@ Public Class FemInsClienti
                     ' Caso non valido (caratteri strani)
                 Else
 
-                    RJMessageBox.Show("Errore: il campo P.IVA / Codice Fiscale contiene caratteri non validi.  " &
+                    IPMessageBox.Show("Errore: il campo P.IVA / Codice Fiscale contiene caratteri non validi.  " &
                        vbCrLf & "Riga: " & r.Index + 1, "Errore inserimento",
                     MessageBoxButtons.OK, MessageBoxIcon.Error)
 
                     Return False
                 End If
-
-
-                '' --- Controllo P_IVA (colonna 7) ---
-                'Dim piva As String = Convert.ToString(r.Cells(7).Value).Trim()
-
-                'If piva.Length <> 16 OrElse Not piva.All(AddressOf Char.IsLetterOrDigit) Then
-                '    MsgBox("Errore: la Partita IVA / Codice Fiscale deve contenere 16 caratteri alfanumerici." &
-                '       vbCrLf & "Riga: " & r.Index + 1,
-                '       MsgBoxStyle.Critical)
-                '    Return False
-                'End If
 
             End If
         Next
@@ -202,7 +195,7 @@ Public Class FemInsClienti
 
     Private Sub RjBtnLog_Click(sender As Object, e As EventArgs) Handles RjBtnLog.Click
         ' Per leggere Avviso corto va bene
-        Dim leggiLog = RJMessageBox.Show(LogReader.ReadLog(), "Apro il file di log")
+        Dim leggiLog = IPMessageBox.Show(LogReader.ReadLog(), "Apro il file di log")
     End Sub
 
     Private Sub TxtCerca_TextChanged(sender As Object, e As EventArgs) Handles TxtCerca.TextChanged
@@ -211,13 +204,13 @@ Public Class FemInsClienti
         GridUtility.EvidenziaTesto(ClientiDataGrid, TxtCerca.Text)
 
         If TxtCerca.Text = "" Then
-            colDgv()
+            ColoraDgv(OrdiniDataGrid, ClientiDataGrid)
         End If
     End Sub
 
     Private Sub RjCircularPictureBox1_Click(sender As Object, e As EventArgs) Handles RjCircularPictureBox1.Click
         TxtCerca.Text = ""
-        colDgv()
+        ColoraDgv(OrdiniDataGrid, ClientiDataGrid)
     End Sub
 
 

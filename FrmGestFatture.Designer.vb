@@ -138,7 +138,7 @@ Partial Class FrmGestFatture
         Me.FatDataGrid.Name = "FatDataGrid"
         Me.FatDataGrid.RowHeadersWidth = 51
         Me.FatDataGrid.RowTemplate.Height = 24
-        Me.FatDataGrid.Size = New System.Drawing.Size(1755, 278)
+        Me.FatDataGrid.Size = New System.Drawing.Size(1805, 278)
         Me.FatDataGrid.TabIndex = 0
         '
         'IDFat
@@ -196,7 +196,7 @@ Partial Class FrmGestFatture
         Me.Descr.HeaderText = "Descrizione"
         Me.Descr.MinimumWidth = 6
         Me.Descr.Name = "Descr"
-        Me.Descr.Width = 425
+        Me.Descr.Width = 380
         '
         'Qta
         '
@@ -212,7 +212,7 @@ Partial Class FrmGestFatture
         Me.Prezzo.HeaderText = "Prezzo"
         Me.Prezzo.MinimumWidth = 6
         Me.Prezzo.Name = "Prezzo"
-        Me.Prezzo.Width = 125
+        Me.Prezzo.Width = 80
         '
         'Importo
         '
@@ -220,7 +220,7 @@ Partial Class FrmGestFatture
         Me.Importo.HeaderText = "Importo"
         Me.Importo.MinimumWidth = 6
         Me.Importo.Name = "Importo"
-        Me.Importo.Width = 125
+        Me.Importo.Width = 80
         '
         'Image
         '
@@ -534,6 +534,7 @@ Partial Class FrmGestFatture
         Me.TxtColli.ReadOnly = True
         Me.TxtColli.Size = New System.Drawing.Size(74, 27)
         Me.TxtColli.TabIndex = 29
+        Me.TxtColli.Tag = "n0"
         Me.TxtColli.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
@@ -1080,18 +1081,6 @@ Partial Class FrmGestFatture
     Friend WithEvents Label7 As Label
     Friend WithEvents TxtIdCli As TextBox
     Friend WithEvents TxtNum As TextBox
-    Friend WithEvents IDFat As DataGridViewTextBoxColumn
-    Friend WithEvents IDCli As DataGridViewTextBoxColumn
-    Friend WithEvents IDOrd As DataGridViewTextBoxColumn
-    Friend WithEvents Num As DataGridViewTextBoxColumn
-    Friend WithEvents DataFat As DataGridViewTextBoxColumn
-    Friend WithEvents NomeFat As DataGridViewTextBoxColumn
-    Friend WithEvents Descr As DataGridViewTextBoxColumn
-    Friend WithEvents Qta As DataGridViewTextBoxColumn
-    Friend WithEvents Prezzo As DataGridViewTextBoxColumn
-    Friend WithEvents Importo As DataGridViewTextBoxColumn
-    Friend WithEvents Image As DataGridViewTextBoxColumn
-    Friend WithEvents DataFutura As DataGridViewTextBoxColumn
     Friend WithEvents RjTutteFat As RJCodeAdvance.RJControls.RJCircularPictureBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TxtColli As TextBox
@@ -1121,4 +1110,16 @@ Partial Class FrmGestFatture
     Friend WithEvents RjCircBtnAnteprima As RJCodeAdvance.RJControls.RJCircularPictureBox
     Friend WithEvents Label19 As Label
     Friend WithEvents RjCircBtnNuovaFattura As RJCodeAdvance.RJControls.RJCircularPictureBox
+    Friend WithEvents IDFat As DataGridViewTextBoxColumn
+    Friend WithEvents IDCli As DataGridViewTextBoxColumn
+    Friend WithEvents IDOrd As DataGridViewTextBoxColumn
+    Friend WithEvents Num As DataGridViewTextBoxColumn
+    Friend WithEvents DataFat As DataGridViewTextBoxColumn
+    Friend WithEvents NomeFat As DataGridViewTextBoxColumn
+    Friend WithEvents Descr As DataGridViewTextBoxColumn
+    Friend WithEvents Qta As DataGridViewTextBoxColumn
+    Friend WithEvents Prezzo As DataGridViewTextBoxColumn
+    Friend WithEvents Importo As DataGridViewTextBoxColumn
+    Friend WithEvents Image As DataGridViewTextBoxColumn
+    Friend WithEvents DataFutura As DataGridViewTextBoxColumn
 End Class

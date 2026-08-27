@@ -1,3 +1,7 @@
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Reports\Rep2Manager.rdlc
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\x86\SqlServerSpatial170.dll
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\x64\SqlServerSpatial170.dll
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\arm64\SqlServerSpatial170.dll
@@ -19,6 +23,9 @@ C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.ReportViewer.Pro
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.SqlServer.Server.dll
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.Web.WebView2.Core.dll
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\RJCodeAdvance.RJControls.dll
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\System.Buffers.dll
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\System.Configuration.ConfigurationManager.dll
@@ -40,6 +47,9 @@ C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.Extensions.Depen
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.SqlServer.Server.pdb
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.SqlServer.Server.xml
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.Web.WebView2.Core.xml
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\System.Buffers.xml
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\bin\Debug\System.Diagnostics.DiagnosticSource.xml
@@ -106,11 +116,17 @@ C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FemInsClient
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.Form1.resources
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmEmitFattura.resources
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmGestFatture.resources
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmHelp.resources
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmHelpWeb.resources
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmInsOrdine.resources
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmMenu.resources
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmPDFColoraDGVvb.resources
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmPreviewPDF.resources
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmRDLC.resources
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmReport.resources
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmReportOrdini.resources
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmSenzaFattura.resources
+C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.FrmTest.resources
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.Resources.resources
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.vbproj.GenerateResource.cache
 C:\Users\Utente\Documents\VSC\CreaFiltroDvg\obj\Debug\CreaFiltroDvg.vbproj.CoreCompileInputs.cache

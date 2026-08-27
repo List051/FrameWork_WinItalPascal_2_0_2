@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmMenu
     Inherits System.Windows.Forms.Form
 
     'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,14 @@ Partial Class FrmMenu
     'NOTA: la procedura che segue è richiesta da Progettazione Windows Form
     'Può essere modificata in Progettazione Windows Form.  
     'Non modificarla mediante l'editor del codice.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMenu))
         Me.PanelBody = New System.Windows.Forms.Panel()
+        Me.RjBtnTestRep = New RJCodeAdvance.RJControls.RJButton()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.RichTextBox6 = New System.Windows.Forms.RichTextBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -35,7 +38,12 @@ Partial Class FrmMenu
         Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.RichTextBox5 = New System.Windows.Forms.RichTextBox()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.RichTextBox7 = New System.Windows.Forms.RichTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.RjBtnRDLC = New RJCodeAdvance.RJControls.RJButton()
+        Me.RjBtnHelpFrm = New RJCodeAdvance.RJControls.RJButton()
+        Me.BtnApriHelpPDF = New RJCodeAdvance.RJControls.RJButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.RjBtnSenzaFattura = New RJCodeAdvance.RJControls.RJButton()
         Me.RjButton1 = New RJCodeAdvance.RJControls.RJButton()
@@ -43,23 +51,23 @@ Partial Class FrmMenu
         Me.RjBtnFattura = New RJCodeAdvance.RJControls.RJButton()
         Me.RjBtnOrdini = New RJCodeAdvance.RJControls.RJButton()
         Me.RjBtnClienti = New RJCodeAdvance.RJControls.RJButton()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.RichTextBox6 = New System.Windows.Forms.RichTextBox()
         Me.PanelBody.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage6.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelBody
         '
         Me.PanelBody.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.PanelBody.Controls.Add(Me.RjBtnTestRep)
         Me.PanelBody.Controls.Add(Me.TabControl1)
         Me.PanelBody.Controls.Add(Me.Panel1)
         Me.PanelBody.Dock = System.Windows.Forms.DockStyle.Fill
@@ -67,6 +75,25 @@ Partial Class FrmMenu
         Me.PanelBody.Name = "PanelBody"
         Me.PanelBody.Size = New System.Drawing.Size(1622, 778)
         Me.PanelBody.TabIndex = 0
+        '
+        'RjBtnTestRep
+        '
+        Me.RjBtnTestRep.BackColor = System.Drawing.Color.RoyalBlue
+        Me.RjBtnTestRep.BackgroundColor = System.Drawing.Color.RoyalBlue
+        Me.RjBtnTestRep.BorderColor = System.Drawing.Color.Lime
+        Me.RjBtnTestRep.BorderRadius = 15
+        Me.RjBtnTestRep.BorderSize = 5
+        Me.RjBtnTestRep.FlatAppearance.BorderSize = 0
+        Me.RjBtnTestRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RjBtnTestRep.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RjBtnTestRep.ForeColor = System.Drawing.Color.White
+        Me.RjBtnTestRep.Location = New System.Drawing.Point(827, 45)
+        Me.RjBtnTestRep.Name = "RjBtnTestRep"
+        Me.RjBtnTestRep.Size = New System.Drawing.Size(262, 45)
+        Me.RjBtnTestRep.TabIndex = 27
+        Me.RjBtnTestRep.Text = "Test Report Manager"
+        Me.RjBtnTestRep.TextColor = System.Drawing.Color.White
+        Me.RjBtnTestRep.UseVisualStyleBackColor = False
         '
         'TabControl1
         '
@@ -76,12 +103,34 @@ Partial Class FrmMenu
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Location = New System.Drawing.Point(206, 71)
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1404, 695)
+        Me.TabControl1.Size = New System.Drawing.Size(1404, 895)
         Me.TabControl1.TabIndex = 17
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.RichTextBox6)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(1396, 866)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "Libreria"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'RichTextBox6
+        '
+        Me.RichTextBox6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox6.Location = New System.Drawing.Point(3, 3)
+        Me.RichTextBox6.Name = "RichTextBox6"
+        Me.RichTextBox6.Size = New System.Drawing.Size(1390, 860)
+        Me.RichTextBox6.TabIndex = 0
+        Me.RichTextBox6.Text = resources.GetString("RichTextBox6.Text")
         '
         'TabPage1
         '
@@ -90,17 +139,18 @@ Partial Class FrmMenu
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1396, 666)
+        Me.TabPage1.Size = New System.Drawing.Size(1396, 866)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Filtra DataGrid"
         '
         'RichTextBox1
         '
+        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.Location = New System.Drawing.Point(38, 41)
+        Me.RichTextBox1.Location = New System.Drawing.Point(3, 3)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
-        Me.RichTextBox1.Size = New System.Drawing.Size(1304, 549)
+        Me.RichTextBox1.Size = New System.Drawing.Size(1390, 860)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         '
@@ -111,20 +161,21 @@ Partial Class FrmMenu
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1396, 666)
+        Me.TabPage2.Size = New System.Drawing.Size(1396, 866)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "PopupHelper"
         '
         'RichTextBox2
         '
         Me.RichTextBox2.BackColor = System.Drawing.Color.White
+        Me.RichTextBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox2.ForeColor = System.Drawing.Color.Black
-        Me.RichTextBox2.Location = New System.Drawing.Point(19, 35)
+        Me.RichTextBox2.Location = New System.Drawing.Point(3, 3)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.ReadOnly = True
         Me.RichTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
-        Me.RichTextBox2.Size = New System.Drawing.Size(1355, 570)
+        Me.RichTextBox2.Size = New System.Drawing.Size(1390, 860)
         Me.RichTextBox2.TabIndex = 19
         Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
         '
@@ -134,16 +185,17 @@ Partial Class FrmMenu
         Me.TabPage3.Controls.Add(Me.RichTextBox3)
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1396, 666)
+        Me.TabPage3.Size = New System.Drawing.Size(1396, 866)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Scrivi Log"
         '
         'RichTextBox3
         '
+        Me.RichTextBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox3.Location = New System.Drawing.Point(60, 28)
+        Me.RichTextBox3.Location = New System.Drawing.Point(0, 0)
         Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(1308, 620)
+        Me.RichTextBox3.Size = New System.Drawing.Size(1396, 866)
         Me.RichTextBox3.TabIndex = 0
         Me.RichTextBox3.Text = resources.GetString("RichTextBox3.Text")
         '
@@ -153,16 +205,17 @@ Partial Class FrmMenu
         Me.TabPage4.Controls.Add(Me.RichTextBox4)
         Me.TabPage4.Location = New System.Drawing.Point(4, 25)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(1396, 666)
+        Me.TabPage4.Size = New System.Drawing.Size(1396, 866)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "ApriDGV"
         '
         'RichTextBox4
         '
+        Me.RichTextBox4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox4.Location = New System.Drawing.Point(50, 24)
+        Me.RichTextBox4.Location = New System.Drawing.Point(0, 0)
         Me.RichTextBox4.Name = "RichTextBox4"
-        Me.RichTextBox4.Size = New System.Drawing.Size(1308, 639)
+        Me.RichTextBox4.Size = New System.Drawing.Size(1396, 866)
         Me.RichTextBox4.TabIndex = 1
         Me.RichTextBox4.Text = resources.GetString("RichTextBox4.Text")
         '
@@ -173,26 +226,50 @@ Partial Class FrmMenu
         Me.TabPage5.Location = New System.Drawing.Point(4, 25)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(1396, 666)
+        Me.TabPage5.Size = New System.Drawing.Size(1396, 866)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Filtra Tutti"
         '
         'RichTextBox5
         '
         Me.RichTextBox5.BackColor = System.Drawing.Color.White
+        Me.RichTextBox5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox5.ForeColor = System.Drawing.Color.Black
-        Me.RichTextBox5.Location = New System.Drawing.Point(21, 28)
+        Me.RichTextBox5.Location = New System.Drawing.Point(3, 3)
         Me.RichTextBox5.Name = "RichTextBox5"
         Me.RichTextBox5.ReadOnly = True
         Me.RichTextBox5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
-        Me.RichTextBox5.Size = New System.Drawing.Size(1355, 570)
+        Me.RichTextBox5.Size = New System.Drawing.Size(1390, 860)
         Me.RichTextBox5.TabIndex = 20
         Me.RichTextBox5.Text = resources.GetString("RichTextBox5.Text")
+        '
+        'TabPage7
+        '
+        Me.TabPage7.Controls.Add(Me.RichTextBox7)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Size = New System.Drawing.Size(1396, 866)
+        Me.TabPage7.TabIndex = 6
+        Me.TabPage7.Text = "Mod. Help"
+        Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'RichTextBox7
+        '
+        Me.RichTextBox7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox7.Location = New System.Drawing.Point(0, 0)
+        Me.RichTextBox7.Name = "RichTextBox7"
+        Me.RichTextBox7.Size = New System.Drawing.Size(1396, 866)
+        Me.RichTextBox7.TabIndex = 0
+        Me.RichTextBox7.Text = resources.GetString("RichTextBox7.Text")
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Orange
+        Me.Panel1.Controls.Add(Me.RjBtnRDLC)
+        Me.Panel1.Controls.Add(Me.RjBtnHelpFrm)
+        Me.Panel1.Controls.Add(Me.BtnApriHelpPDF)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.RjBtnSenzaFattura)
         Me.Panel1.Controls.Add(Me.RjButton1)
@@ -205,6 +282,63 @@ Partial Class FrmMenu
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 778)
         Me.Panel1.TabIndex = 15
+        '
+        'RjBtnRDLC
+        '
+        Me.RjBtnRDLC.BackColor = System.Drawing.Color.RoyalBlue
+        Me.RjBtnRDLC.BackgroundColor = System.Drawing.Color.RoyalBlue
+        Me.RjBtnRDLC.BorderColor = System.Drawing.Color.Lime
+        Me.RjBtnRDLC.BorderRadius = 15
+        Me.RjBtnRDLC.BorderSize = 5
+        Me.RjBtnRDLC.FlatAppearance.BorderSize = 0
+        Me.RjBtnRDLC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RjBtnRDLC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RjBtnRDLC.ForeColor = System.Drawing.Color.White
+        Me.RjBtnRDLC.Location = New System.Drawing.Point(12, 526)
+        Me.RjBtnRDLC.Name = "RjBtnRDLC"
+        Me.RjBtnRDLC.Size = New System.Drawing.Size(150, 56)
+        Me.RjBtnRDLC.TabIndex = 26
+        Me.RjBtnRDLC.Text = "RDLC Ordini"
+        Me.RjBtnRDLC.TextColor = System.Drawing.Color.White
+        Me.RjBtnRDLC.UseVisualStyleBackColor = False
+        '
+        'RjBtnHelpFrm
+        '
+        Me.RjBtnHelpFrm.BackColor = System.Drawing.Color.RoyalBlue
+        Me.RjBtnHelpFrm.BackgroundColor = System.Drawing.Color.RoyalBlue
+        Me.RjBtnHelpFrm.BorderColor = System.Drawing.Color.Lime
+        Me.RjBtnHelpFrm.BorderRadius = 15
+        Me.RjBtnHelpFrm.BorderSize = 5
+        Me.RjBtnHelpFrm.FlatAppearance.BorderSize = 0
+        Me.RjBtnHelpFrm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RjBtnHelpFrm.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RjBtnHelpFrm.ForeColor = System.Drawing.Color.White
+        Me.RjBtnHelpFrm.Location = New System.Drawing.Point(12, 734)
+        Me.RjBtnHelpFrm.Name = "RjBtnHelpFrm"
+        Me.RjBtnHelpFrm.Size = New System.Drawing.Size(150, 47)
+        Me.RjBtnHelpFrm.TabIndex = 25
+        Me.RjBtnHelpFrm.Text = "Apri HelpFrm"
+        Me.RjBtnHelpFrm.TextColor = System.Drawing.Color.White
+        Me.RjBtnHelpFrm.UseVisualStyleBackColor = False
+        '
+        'BtnApriHelpPDF
+        '
+        Me.BtnApriHelpPDF.BackColor = System.Drawing.Color.RoyalBlue
+        Me.BtnApriHelpPDF.BackgroundColor = System.Drawing.Color.RoyalBlue
+        Me.BtnApriHelpPDF.BorderColor = System.Drawing.Color.Lime
+        Me.BtnApriHelpPDF.BorderRadius = 15
+        Me.BtnApriHelpPDF.BorderSize = 5
+        Me.BtnApriHelpPDF.FlatAppearance.BorderSize = 0
+        Me.BtnApriHelpPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnApriHelpPDF.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnApriHelpPDF.ForeColor = System.Drawing.Color.White
+        Me.BtnApriHelpPDF.Location = New System.Drawing.Point(12, 672)
+        Me.BtnApriHelpPDF.Name = "BtnApriHelpPDF"
+        Me.BtnApriHelpPDF.Size = New System.Drawing.Size(150, 47)
+        Me.BtnApriHelpPDF.TabIndex = 23
+        Me.BtnApriHelpPDF.Text = "Apri Help"
+        Me.BtnApriHelpPDF.TextColor = System.Drawing.Color.White
+        Me.BtnApriHelpPDF.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
@@ -227,9 +361,9 @@ Partial Class FrmMenu
         Me.RjBtnSenzaFattura.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RjBtnSenzaFattura.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RjBtnSenzaFattura.ForeColor = System.Drawing.Color.White
-        Me.RjBtnSenzaFattura.Location = New System.Drawing.Point(12, 444)
+        Me.RjBtnSenzaFattura.Location = New System.Drawing.Point(12, 351)
         Me.RjBtnSenzaFattura.Name = "RjBtnSenzaFattura"
-        Me.RjBtnSenzaFattura.Size = New System.Drawing.Size(150, 76)
+        Me.RjBtnSenzaFattura.Size = New System.Drawing.Size(150, 71)
         Me.RjBtnSenzaFattura.TabIndex = 23
         Me.RjBtnSenzaFattura.Text = "Senza Fattura"
         Me.RjBtnSenzaFattura.TextColor = System.Drawing.Color.White
@@ -246,11 +380,11 @@ Partial Class FrmMenu
         Me.RjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RjButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RjButton1.ForeColor = System.Drawing.Color.White
-        Me.RjButton1.Location = New System.Drawing.Point(12, 674)
+        Me.RjButton1.Location = New System.Drawing.Point(12, 603)
         Me.RjButton1.Name = "RjButton1"
         Me.RjButton1.Size = New System.Drawing.Size(150, 47)
         Me.RjButton1.TabIndex = 22
-        Me.RjButton1.Text = "Form Test"
+        Me.RjButton1.Text = "Help GitHub"
         Me.RjButton1.TextColor = System.Drawing.Color.White
         Me.RjButton1.UseVisualStyleBackColor = False
         '
@@ -265,9 +399,9 @@ Partial Class FrmMenu
         Me.RjBtnForm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RjBtnForm1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RjBtnForm1.ForeColor = System.Drawing.Color.White
-        Me.RjBtnForm1.Location = New System.Drawing.Point(12, 557)
+        Me.RjBtnForm1.Location = New System.Drawing.Point(12, 451)
         Me.RjBtnForm1.Name = "RjBtnForm1"
-        Me.RjBtnForm1.Size = New System.Drawing.Size(150, 77)
+        Me.RjBtnForm1.Size = New System.Drawing.Size(150, 56)
         Me.RjBtnForm1.TabIndex = 21
         Me.RjBtnForm1.Text = "Report Ordini"
         Me.RjBtnForm1.TextColor = System.Drawing.Color.White
@@ -284,7 +418,7 @@ Partial Class FrmMenu
         Me.RjBtnFattura.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RjBtnFattura.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RjBtnFattura.ForeColor = System.Drawing.Color.White
-        Me.RjBtnFattura.Location = New System.Drawing.Point(12, 344)
+        Me.RjBtnFattura.Location = New System.Drawing.Point(12, 287)
         Me.RjBtnFattura.Name = "RjBtnFattura"
         Me.RjBtnFattura.Size = New System.Drawing.Size(150, 47)
         Me.RjBtnFattura.TabIndex = 20
@@ -303,7 +437,7 @@ Partial Class FrmMenu
         Me.RjBtnOrdini.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RjBtnOrdini.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RjBtnOrdini.ForeColor = System.Drawing.Color.White
-        Me.RjBtnOrdini.Location = New System.Drawing.Point(12, 251)
+        Me.RjBtnOrdini.Location = New System.Drawing.Point(12, 217)
         Me.RjBtnOrdini.Name = "RjBtnOrdini"
         Me.RjBtnOrdini.Size = New System.Drawing.Size(150, 47)
         Me.RjBtnOrdini.TabIndex = 19
@@ -330,45 +464,26 @@ Partial Class FrmMenu
         Me.RjBtnClienti.TextColor = System.Drawing.Color.White
         Me.RjBtnClienti.UseVisualStyleBackColor = False
         '
-        'TabPage6
-        '
-        Me.TabPage6.Controls.Add(Me.RichTextBox6)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(1396, 666)
-        Me.TabPage6.TabIndex = 5
-        Me.TabPage6.Text = "Libreria"
-        Me.TabPage6.UseVisualStyleBackColor = True
-        '
-        'RichTextBox6
-        '
-        Me.RichTextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox6.Location = New System.Drawing.Point(62, 62)
-        Me.RichTextBox6.Name = "RichTextBox6"
-        Me.RichTextBox6.Size = New System.Drawing.Size(1286, 585)
-        Me.RichTextBox6.TabIndex = 0
-        Me.RichTextBox6.Text = resources.GetString("RichTextBox6.Text")
-        '
         'FrmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1622, 778)
         Me.Controls.Add(Me.PanelBody)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmMenu"
         Me.Text = "FrmMenuvb"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelBody.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage6.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage5.ResumeLayout(False)
+        Me.TabPage7.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage6.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -395,4 +510,10 @@ Partial Class FrmMenu
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TabPage6 As TabPage
     Friend WithEvents RichTextBox6 As RichTextBox
+    Friend WithEvents BtnApriHelpPDF As RJCodeAdvance.RJControls.RJButton
+    Friend WithEvents RjBtnHelpFrm As RJCodeAdvance.RJControls.RJButton
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents RichTextBox7 As RichTextBox
+    Friend WithEvents RjBtnRDLC As RJCodeAdvance.RJControls.RJButton
+    Friend WithEvents RjBtnTestRep As RJCodeAdvance.RJControls.RJButton
 End Class

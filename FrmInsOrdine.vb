@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Configuration
-Imports CustomMessageBoxVB
+'Imports CustomMessageBoxVB
 Imports WinItalPascal
 
 
@@ -47,7 +47,7 @@ Public Class FrmInsOrdine
 
         Catch ex As Exception
             FrameworkLogger.LogError(ex, "File Log Errori")
-            RJMessageBox.Show("Errore durante il caricamento del form: " & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            IPMessageBox.Show("Errore durante il caricamento del form: " & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -82,6 +82,54 @@ Public Class FrmInsOrdine
 
     End Sub
 
+#Region "Ordini"
+
+
+
+
+    ' Esegue calcoli automaticamente in OrdiniDataGrid
+
+    '' Aggiorna la sola riga modificata: valore = colonna(4) * colonna(5) -> colonna(6)
+
+    Private Sub OrdiniDataGrid_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles OrdiniDataGrid.CellEndEdit
+
+        ' Se la riga è nuova, esci
+        If OrdiniDataGrid.Rows(e.RowIndex).IsNewRow Then Exit Sub
+
+        ' Colonne interessate: Qta (4) e Utilizzate (5)
+        If e.ColumnIndex = 4 OrElse e.ColumnIndex = 5 Then
+            CalcolaResiduoRiga(e.RowIndex)
+        End If
+
+    End Sub
+
+    Private Sub CalcolaResiduoRiga(rowIndex As Integer)
+
+        Dim row As DataGridViewRow = OrdiniDataGrid.Rows(rowIndex)
+
+        Dim Qta As Integer = 0
+        Dim SxImp As Integer = 0
+        Dim TotImp As Integer = 0
+
+        ' Qta (colonna 3)
+        If Not IsDBNull(row.Cells(4).Value) AndAlso
+         IsNumeric(row.Cells(4).Value) Then
+            Qta = CInt(row.Cells(4).Value)
+        End If
+
+        ' Importo(colonna 6)
+        If Not IsDBNull(row.Cells(5).Value) AndAlso
+         IsNumeric(row.Cells(5).Value) Then
+            SxImp = CInt(row.Cells(5).Value)
+        End If
+
+        ' Calcolo Totale
+        TotImp = Qta * SxImp
+
+        ' Scrivi il risultato nella colonna 7
+        row.Cells(6).Value = TotImp
+
+    End Sub
 
     Private Sub RjBtnSalva_Click(sender As Object, e As EventArgs) _
     Handles RJBtnSalva.Click
@@ -95,7 +143,7 @@ Public Class FrmInsOrdine
 
             'FrameworkLogger.Log("Ordine salvato correttamente.")
             ' Non ho messo questo tipo di messaggio in libreria
-            If RJMessageBox.Show("Vuoi cancellare il log?", "Conferma",
+            If IPMessageBox.Show("Vuoi cancellare il log?", "Conferma",
                    MessageBoxButtons.YesNo,
                    MessageBoxIcon.Question) = DialogResult.Yes Then
 
@@ -114,7 +162,7 @@ Public Class FrmInsOrdine
         Catch ex As Exception
             LogLeggiScrivi.ScriviLog("File Log", ex)   ' con nuovo file di Log
             FrameworkLogger.LogError(ex, "SALVA ORDINI") ' Alternativa
-            RJMessageBox.Show(
+            IPMessageBox.Show(
             "ERRORE SALVATAGGIO: " & ex.Message,
             "Errore",
             MessageBoxButtons.OK,
@@ -123,6 +171,8 @@ Public Class FrmInsOrdine
         End Try
 
     End Sub
+
+#End Region
 
     Sub TuttiClienti()
         ' Quando devo inserire un nuovo ordine voglio vedere tutti i clienti, quindi resetto il filtro
@@ -157,7 +207,7 @@ Public Class FrmInsOrdine
     End Sub
 
     Private Sub RjBtnResetta_Click(sender As Object, e As EventArgs) Handles RjBtnResetta.Click
-        RJMessageBox.Show("Resetto la ricerca e le evidenziazioni", "Reset", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        IPMessageBox.Show("Resetto la ricerca e le evidenziazioni", "Reset", MessageBoxButtons.OK, MessageBoxIcon.Information)
         TxtTutti.Text = ""
         TxtEvidenzia.Text = ""
         GridUtility.ResetColori(OrdiniDataGrid)
@@ -168,7 +218,7 @@ Public Class FrmInsOrdine
     Private Sub RjBtnCerca_Click(sender As Object, e As EventArgs) Handles RjBtnCerca.Click
         Dim filtro As String = TxtEvidenzia.Text.Trim.ToUpper()
         If filtro = "" Then
-            RJMessageBox.Show("Inserisci un testo da evidenziare.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            IPMessageBox.Show("Inserisci un testo da evidenziare.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
         GridUtility.EvidenziaTesto(OrdiniDataGrid, filtro)
@@ -176,7 +226,7 @@ Public Class FrmInsOrdine
 
     Private Sub RjBtnLog_Click(sender As Object, e As EventArgs) Handles RjBtnLog.Click
         ' Per leggere Avviso corto va bene
-        Dim leggiLog = RJMessageBox.Show(LogReader.ReadLog(), "Apro il file di log")
+        Dim leggiLog = IPMessageBox.Show(LogReader.ReadLog(), "Apro il file di log")
 
         'LogLeggiScrivi.ApriLog()  ' OK, apre il file con NotePad file lunghi
     End Sub
@@ -187,8 +237,13 @@ Public Class FrmInsOrdine
 
         DataGVLoad.ApriDGV(ClientiDataGrid, MiaQry)
         ClientiDataGrid.Refresh()
+        GridUtility.EvidenziaTesto(ClientiDataGrid, TxtCercaCliente.Text)
 
-        GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+        If TxtCercaCliente.Text = "" Then
+
+            GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+
+        End If
 
     End Sub
 

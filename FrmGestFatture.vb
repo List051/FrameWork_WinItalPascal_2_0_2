@@ -2,8 +2,7 @@
 Imports System.IO
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
-
-Imports CustomMessageBoxVB
+'Imports CustomMessageBoxVB
 Imports WinItalPascal
 
 ' ho eliminato il modulo perchè inutile
@@ -34,13 +33,17 @@ Public Class FrmGestFatture
 
         'TODO: questa riga di codice carica i dati nella tabella 'WinDBGdRDataSet.Clienti'. È possibile spostarla o rimuoverla se necessario.
         Me.ClientiTableAdapter.Fill(Me.WinDBGdRDataSet.Clienti)
-        GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+        ' GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
         'TODO: questa riga di codice carica i dati nella tabella 'WinDBGdRDataSet.Ordini'. È possibile spostarla o rimuoverla se necessario.
         Me.OrdiniTableAdapter.Fill(Me.WinDBGdRDataSet.Ordini)
-        GridUtility.ColoraColonne(OrdDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+        ' GridUtility.ColoraColonne(OrdDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
         'TODO: questa riga di codice carica i dati nella tabella 'WinDBGdRDataSet.Fattura'. È possibile spostarla o rimuoverla se necessario.
         Me.FatturaTableAdapter.Fill(Me.WinDBGdRDataSet.Fattura)
-        GridUtility.ColoraColonne(FatDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+        ' GridUtility.ColoraColonne(FatDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+
+        ColoraDgv(ClientiDataGrid, OrdDataGrid, FatDataGrid)
+        ColoraColonneSpec(FatDataGrid, {10})
+
 
         ' Carica immagine da My.Resources
         ' Devo inserire in questo modo affinche non interferisce con iTextySharp
@@ -51,6 +54,11 @@ Public Class FrmGestFatture
         ' Messaggio informazione
         PopupHelper.AttachPopup(RjCercaFatKO, vbCrLf & "       Attenzione" & vbCrLf & "Cerca Ordini senza fatturazione" & vbCrLf & "Prosegui cliccando su un rigo per visualizzare" & vbCrLf & "il cliente senza fattura", Nothing, Color.Aquamarine, Color.Blue)
 
+        PopupHelper.AttachPopup(RjCercaFattura, vbCrLf & "       Attenzione" & vbCrLf & "Cerca Num e Cliente Fatturato" & vbCrLf & "Prosegui cliccando su un rigo per visualizzare" & vbCrLf & "il cliente con fattura", Nothing, Color.Aquamarine, Color.Blue)
+
+
+        PopupHelper.AttachPopup(RjCircApriDGVQry, vbCrLf & "       Attenzione" & vbCrLf & "Cerca Ordini senza fatturazione" & vbCrLf & "Prosegui cliccando su un rigo per visualizzare" & vbCrLf & "il cliente senza fattura", Nothing, Color.Aquamarine, Color.Blue)
+
         PopupHelper.AttachPopup(RjCircClienti, vbCrLf & "     Attenzione" & vbCrLf & "     Cliente da fatturare,nella colonna" & vbCrLf & " GIALLA visualizza il numero ID da inserire in fattura", Nothing, Color.Aquamarine, Color.Blue)
 
         PopupHelper.AttachPopup(RjCircOrdini, vbCrLf & "Attenzione" & vbCrLf & "     Cliente da fatturare,nella colonna" & vbCrLf & " GIALLA visualizza il numero ID da inserire in fattura", Nothing, Color.Aquamarine, Color.Blue)
@@ -58,6 +66,8 @@ Public Class FrmGestFatture
         PopupHelper.AttachPopup(RjBtnEseguiCalcoli, vbCrLf & "Attenzione Totali Fatture" & vbCrLf & "" & vbCrLf & "Questo è il Totale delle Fatture emesse " & vbCrLf & vbCrLf & "Seleziona il Numero IdCliente e Numero Fattura se vuoi eseguire i calcoli di una fattura da stampare ", Nothing, Color.Aquamarine, Color.Blue)
 
         PopupHelper.AttachPopup(RjCircBtnCambiaCartella, vbCrLf & " " & vbCrLf & " Seleziona dove vuoi salvare la fattura " & vbCrLf & " In seguito la salverà nella stessa cartella " & vbCrLf & " a meno che non vuoi salvare in una diversa cartella ", Nothing, Color.Aquamarine, Color.Blue)
+
+        PopupHelper.AttachPopup(RjGeneraPDF, vbCrLf & "       Attenzione" & vbCrLf & "Prima usa Cerca Fattura" & vbCrLf & "Prosegui cliccando su un rigo per visualizzare" & vbCrLf & "il cliente con fattura", Nothing, Color.Aquamarine, Color.Blue)
 
     End Sub
 
@@ -80,7 +90,8 @@ Public Class FrmGestFatture
         GridFilter.FiltraDgv(
         ClientiDataGrid,
         $"IdClienti = {idCli}")
-        GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+        ColoraDgv(ClientiDataGrid)
+        '  GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
 
     End Sub
 
@@ -95,8 +106,9 @@ Where (Fattura.IDOrd Is NULL)"
         LogLeggiScrivi.ScriviLogMsg("La Query è stata eseguita correttamente")
 
         ' Per leggere Avviso corto va bene
-        Dim leggiLog = RJMessageBox.Show(LogReader.ReadLog(), "Apro il file di log")
-        GridUtility.ColoraColonne(OrdDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+        Dim leggiLog = IPMessageBox.Show(LogReader.ReadLog(), "Apro il file di log")
+        ColoraDgv(OrdDataGrid)
+        ' GridUtility.ColoraColonne(OrdDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
     End Sub
 
     ' Differenze da ApriDGV 
@@ -123,23 +135,26 @@ Where (Fattura.IDOrd Is NULL)"
             End Using
         End Using
         '************************************************
-        GridUtility.ColoraColonne(OrdDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+        ColoraDgv(OrdDataGrid)
+        ' GridUtility.ColoraColonne(OrdDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
     End Sub
 
 
     Private Sub RjSalvaFattura_Click(sender As Object, e As EventArgs) Handles RjSalvaFattura.Click
         Try
-
+            ' --- Prima aggiorni le colonne automatiche ---
+            AggiornaStato()
+            GridUtility.ConvertiMaiuscolo(FatDataGrid)
             Me.Validate()
             Me.FatturaBindingSource.EndEdit()
             Me.TableAdapterManager.UpdateAll(Me.WinDBGdRDataSet)
-            RJMessageBox.Show("Fattura Salvata correttamente")
+            IPMessageBox.Show("Fattura Salvata correttamente")
 
-            If RJMessageBox.Show("Vuoi eliminare righe per vedere ultimi 10 msg ?", "Elimino messaggi in Log",
+            If IPMessageBox.Show("Vuoi eliminare righe per vedere ultimi 10 msg ?", "Elimino messaggi in Log",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Question) = DialogResult.Yes Then
                 ' Non ho messo questo tipo di messaggio in libreria
-                LogLeggiScrivi.ClearLog(10) '  da default ClearLog()  mantiene ultimi 5 gruppi
+                LogLeggiScrivi.ClearLog() '  da default ClearLog()  mantiene ultimi 5 gruppi
             End If
 
             Dim Utente As String = Convert.ToString(FatDataGrid.CurrentRow.Cells(5).Value)
@@ -149,12 +164,13 @@ Where (Fattura.IDOrd Is NULL)"
             LogLeggiScrivi.ScriviLogMsg("Fattura " & NumeroFattura & " di " & Utente & " salvata correttamente.")
             'FrameworkLogger.Log("Fattura " & NumeroFattura & " di " & Utente & " salvata correttamente.")
 
-            GridUtility.ColoraColonne(FatDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+            ColoraDgv(FatDataGrid)  ' Più pratico della riga sotto
+            'GridUtility.ColoraColonne(FatDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
 
         Catch ex As Exception
 
             FrameworkLogger.LogError(ex, "SALVA FATTURA")
-            RJMessageBox.Show(
+            IPMessageBox.Show(
             "ERRORE SALVATAGGIO: " & ex.Message,
             "Errore",
             MessageBoxButtons.OK,
@@ -163,10 +179,33 @@ Where (Fattura.IDOrd Is NULL)"
         End Try
     End Sub
 
+    Private Sub AggiornaStato()
+        Dim r As DataGridViewRow = FatDataGrid.CurrentRow
+        If r Is Nothing OrElse r.IsNewRow Then Exit Sub
+
+        ' --- Colonna 10: Image ---
+        Dim stato As Object = r.Cells("Image").Value
+
+        ' Imposta "Attesa" SOLO se il campo è vuoto (fase di inserimento)
+        If stato Is Nothing OrElse String.IsNullOrWhiteSpace(stato.ToString()) Then
+            r.Cells("Image").Value = "Attesa"
+        End If
+
+        ' --- Colonna 11: DataFutura ---
+        Dim dataFutura As Object = r.Cells("DataFutura").Value
+
+        ' Imposta DataFutura SOLO se vuota (fase di inserimento)
+        If dataFutura Is Nothing OrElse Not IsDate(dataFutura) Then
+            r.Cells("DataFutura").Value = Date.Today.AddDays(30)
+        End If
+    End Sub
+
+
+
     Private Sub RjBtnLog_Click(sender As Object, e As EventArgs) Handles RjBtnLog.Click
         ' leggo file Log
 
-        RJMessageBox.Show(LogReader.ReadLog(), "Leggo file LOG")
+        IPMessageBox.Show(LogReader.ReadLog(), "Leggo file LOG")
     End Sub
 
     Private Sub RjCercaFattura_Click(sender As Object, e As EventArgs) Handles RjCercaFattura.Click
@@ -192,7 +231,9 @@ Where (Fattura.IDOrd Is NULL)"
         TxtNum.Clear()
         ' tutte le fatture
         DataGVLoad.ApriDGV(FatDataGrid, "Select * from Fattura")
-        GridUtility.ColoraColonne(FatDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+
+        ColoraDgv(FatDataGrid)  ' Più pratico della riga sotto)
+        ' GridUtility.ColoraColonne(FatDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
     End Sub
 
     Private Sub FatDataGridview_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles FatDataGrid.CellFormatting
@@ -239,15 +280,60 @@ Where (Fattura.IDOrd Is NULL)"
             TxtNomeFat.Text = sb.ToString()
 
         Catch ex As Exception
-            RJMessageBox.Show(ex.Message)
+            IPMessageBox.Show(ex.Message)
         End Try
     End Sub
 
 #Region "Calcola Totali Fattura"
 
+    ' Esegue calcoli automaticamente in FatDataGrid
+
+    '' Aggiorna la sola riga modificata: valore = colonna(7) * colonna(8) -> colonna(9)
+
+    Private Sub FatDataGrid_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles FatDataGrid.CellEndEdit
+
+        ' Se la riga è nuova, esci
+        If FatDataGrid.Rows(e.RowIndex).IsNewRow Then Exit Sub
+
+        ' Colonne interessate: Qta (7) e Utilizzate (8)
+        If e.ColumnIndex = 7 OrElse e.ColumnIndex = 8 Then
+            CalcolaResiduoRiga(e.RowIndex)
+        End If
+
+    End Sub
+
+    Private Sub CalcolaResiduoRiga(rowIndex As Integer)
+
+        Dim row As DataGridViewRow = FatDataGrid.Rows(rowIndex)
+
+        Dim Qta As Integer = 0
+        Dim SxImp As Integer = 0D
+        Dim TotImp As Integer = 0D
+
+        ' Qta (colonna 3)
+        If Not IsDBNull(row.Cells(7).Value) AndAlso
+         IsNumeric(row.Cells(7).Value) Then
+            Qta = CInt(row.Cells(7).Value)
+        End If
+
+        ' Importo(colonna 9)
+        If Not IsDBNull(row.Cells(8).Value) AndAlso
+         IsNumeric(row.Cells(8).Value) Then
+            SxImp = CInt(row.Cells(8).Value)
+        End If
+
+        ' Calcolo Totale
+        TotImp = Qta * SxImp
+
+        ' Scrivi il risultato nella colonna 7
+        row.Cells(9).Value = TotImp
+
+    End Sub
+
+
     Private Sub CalcolaTotaliFiltrati()
 
-        Dim totQta As Decimal = 0D
+        Dim totQta As Decimal = 0
         Dim totPrezzo As Decimal = 0D
         Dim totImporto As Decimal = 0D
 
@@ -276,8 +362,8 @@ Where (Fattura.IDOrd Is NULL)"
         Next
 
         ' Inserimento nelle TextBox
-        TxtColli.Text = totQta.ToString("N2")
-        TxtPrezzo.Text = totPrezzo.ToString("N2")
+        TxtColli.Text = totQta.ToString("N0")  ' numero intero
+        TxtPrezzo.Text = totPrezzo.ToString("N2") ' numero decimale
         TxtImporto.Text = totImporto.ToString("N2")
         'TxtTotaleImporto.Text = TxtImporto.Text
         ' Calcolo IVA
@@ -425,7 +511,7 @@ Where (Fattura.IDOrd Is NULL)"
         Next
 
         doc.Close()
-        RJMessageBox.Show("PDF generato: " & Percorso)
+        IPMessageBox.Show("PDF generato: " & Percorso)
 
     End Sub
 
@@ -514,7 +600,7 @@ Where (Fattura.IDOrd Is NULL)"
 
             If dlg.ShowDialog() = DialogResult.OK Then
                 File.WriteAllText(filePath, dlg.SelectedPath)
-                RJMessageBox.Show("Nuova cartella salvata correttamente:" & vbCrLf & dlg.SelectedPath)
+                IPMessageBox.Show("Nuova cartella salvata correttamente:" & vbCrLf & dlg.SelectedPath)
             End If
         End Using
     End Sub
@@ -532,8 +618,9 @@ Where (Fattura.IDOrd Is NULL)"
         GridFilter.FiltraDgv(
         ClientiDataGrid,
         $"IdClienti = {idCli}")
-        GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo,
-                            Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+
+        ColoraDgv(ClientiDataGrid)
+        ' GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo,Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
 
     End Sub
 
@@ -554,7 +641,7 @@ Where (Fattura.IDOrd Is NULL)"
             frm.Show()
 
         Catch ex As Exception
-            RJMessageBox.Show("Errore durante l'anteprima PDF:" & vbCrLf & ex.Message)
+            IPMessageBox.Show("Errore durante l'anteprima PDF:" & vbCrLf & ex.Message)
         End Try
     End Sub
 
@@ -656,10 +743,13 @@ Where (Fattura.IDOrd Is NULL)"
     End Function
 
     Private Sub RjCircBtnAnteprima_Click(sender As Object, e As EventArgs) Handles RjCircBtnAnteprima.Click
+
         Try
+            Me.Hide()
             MostraAnteprimaPDF()
+
         Catch ex As Exception
-            RJMessageBox.Show("Errore durante l'anteprima PDF:" & vbCrLf &
+            IPMessageBox.Show("Errore durante l'anteprima PDF:" & vbCrLf &
                       ex.Message & vbCrLf &
                       ex.StackTrace)
         End Try
@@ -689,8 +779,12 @@ Where (Fattura.IDOrd Is NULL)"
             FatDataGrid.CurrentCell = FatDataGrid.Rows(index).Cells(1)
 
         Catch ex As Exception
-            RJMessageBox.Show("Errore durante la creazione della nuova fattura: " & ex.Message)
+            IPMessageBox.Show("Errore durante la creazione della nuova fattura: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub TxtColli_TextChanged(sender As Object, e As EventArgs) Handles TxtColli.TextChanged
+
     End Sub
 
 #End Region

@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{129B57FB-AE1B-4E88-B14C-7282F7466C82}|CreaFiltroDvg.vbproj|c:\\users\\utente\\documents\\vsc\\creafiltrodvg\\frmmenu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{129B57FB-AE1B-4E88-B14C-7282F7466C82}|CreaFiltroDvg.vbproj|C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\frmmenu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{129B57FB-AE1B-4E88-B14C-7282F7466C82}|CreaFiltroDvg.vbproj|solutionrelative:frmmenu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{129B57FB-AE1B-4E88-B14C-7282F7466C82}|CreaFiltroDvg.vbproj|C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\frmmenu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{129B57FB-AE1B-4E88-B14C-7282F7466C82}|CreaFiltroDvg.vbproj|solutionrelative:frmmenu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{129B57FB-AE1B-4E88-B14C-7282F7466C82}|CreaFiltroDvg.vbproj|c:\\users\\utente\\documents\\vsc\\creafiltrodvg\\frmhelpweb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{129B57FB-AE1B-4E88-B14C-7282F7466C82}|CreaFiltroDvg.vbproj|solutionrelative:frmhelpweb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{129B57FB-AE1B-4E88-B14C-7282F7466C82}|CreaFiltroDvg.vbproj|c:\\users\\utente\\documents\\vsc\\creafiltrodvg\\frmhelpweb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{129B57FB-AE1B-4E88-B14C-7282F7466C82}|CreaFiltroDvg.vbproj|solutionrelative:frmhelpweb.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +38,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmHelpWeb.vb",
+              "DocumentMoniker": "C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\FrmHelpWeb.vb",
+              "RelativeDocumentMoniker": "FrmHelpWeb.vb",
+              "ToolTip": "C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\FrmHelpWeb.vb",
+              "RelativeToolTip": "FrmHelpWeb.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-08-27T04:47:59.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmHelpWeb.vb [Progettazione]",
+              "DocumentMoniker": "C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\FrmHelpWeb.vb",
+              "RelativeDocumentMoniker": "FrmHelpWeb.vb",
+              "ToolTip": "C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\FrmHelpWeb.vb [Progettazione]",
+              "RelativeToolTip": "FrmHelpWeb.vb [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-08-27T04:47:54.44Z",
+              "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "FrmMenu.vb [Progettazione]",
               "DocumentMoniker": "C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\FrmMenu.vb",
@@ -33,8 +70,21 @@
               "ToolTip": "C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\FrmMenu.vb [Progettazione]",
               "RelativeToolTip": "FrmMenu.vb [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-06-17T07:12:21.6Z",
+              "WhenOpened": "2026-07-30T07:55:20.667Z",
               "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmMenu.vb",
+              "DocumentMoniker": "C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\FrmMenu.vb",
+              "RelativeDocumentMoniker": "FrmMenu.vb",
+              "ToolTip": "C:\\Users\\Utente\\Documents\\VSC\\CreaFiltroDvg\\FrmMenu.vb",
+              "RelativeToolTip": "FrmMenu.vb",
+              "ViewState": "AgIAANUAAAAAAAAAAAAAAIAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-07-09T09:14:45.375Z",
+              "EditorCaption": ""
             }
           ]
         }

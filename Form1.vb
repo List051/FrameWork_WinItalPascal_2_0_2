@@ -2,7 +2,7 @@
 
 Imports System.Data.SqlClient
 Imports System.Configuration
-Imports CustomMessageBoxVB
+'Imports CustomMessageBoxVB
 Imports WinItalPascal
 
 
@@ -59,9 +59,16 @@ Public Class Form1
 
             dtOriginal = DB.FillDataTable("SELECT * FROM Fattura")
 
-            GridUtility.ColoraColonne(OrdiniDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
-            GridUtility.ColoraColonne(FatturaDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
-            GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+            'GridUtility.ColoraColonne(OrdiniDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+            'GridUtility.ColoraColonne(FatturaDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+
+            ' evidenzio le colonne 4 e 10 con sfondo giallo e testo rosso
+            ColoraColonneSpec(FatturaDataGrid, {4, 10}, Color.Yellow, Color.Red) ' 1 colora sfondo 2 colora testo
+            ' GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+
+            ColoraDgv(OrdiniDataGrid, ClientiDataGrid)
+
+
 
             ' image per button
             'Dim imgSalva As Image = My.Resources.editFat
@@ -76,22 +83,22 @@ Public Class Form1
 
         Catch ex As Exception
             FrameworkLogger.LogError(ex, "File Log Errori")
-            RJMessageBox.Show("Errore durante il caricamento del form: " & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            IPMessageBox.Show("Errore durante il caricamento del form: " & ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
 
 
-    Private Sub FiltraDgv(
-    dgv As DataGridView,
-    filtro As String)
+    'Private Sub FiltraDgv(
+    'dgv As DataGridView,
+    'filtro As String)
 
-        Dim dv As DataView =
-        DirectCast(dgv.DataSource, DataView)
+    '    Dim dv As DataView =
+    '    DirectCast(dgv.DataSource, DataView)
 
-        dv.RowFilter = filtro
+    '    dv.RowFilter = filtro
 
-    End Sub
+    'End Sub
 
 
     Private Sub FatturaDataGrid_CellClick(
@@ -103,12 +110,29 @@ Public Class Form1
 
         Dim idCli As Integer =
             CInt(FatturaDataGrid.Rows(e.RowIndex).Cells("IDCli").Value)
-        ResetFiltro(OrdiniDataGrid)
+        GridFilter.ResetFiltro(OrdiniDataGrid)
         GridFilter.FiltraDgv(
             OrdiniDataGrid,
             $"IDCliOrd = {idCli}")
+        ' alternative con modulo ColoraGrid
+        ' ColoraDgv(OrdiniDataGrid)
+        'ColoraDgvColorato((Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Oro), OrdiniDataGrid)
+        ' ColoraColonneSpec(OrdiniDataGrid, {1, 3}, Color.Aquamarine, Color.DarkBlue)
+        'ColoraColonneSpec(OrdiniDataGrid, {0, 2, 5})  ' Sfondo giallo chiaro, testo nero
+        ' ColoraDgvMod(OrdiniDataGrid, TemaM.Pastello)
+        ' ColoraDgvOf24(OrdiniDataGrid, TemaProf.Of24)
+        '    ColoraDgvCustom(
+        'OrdiniDataGrid,
+        'Color.LightBlue,
+        'Color.LightGreen,
+        'Color.LightYellow)
+        ' ColoraDgvCustom(OrdiniDataGrid, Color.LightGreen, ColSpec.Salta, Color.LightPink)
+        ColoraDgvCustomM(
+{Color.LightBlue, Color.LightGreen, ColSpec.Salta, Color.LightYellow},
+OrdiniDataGrid,
+ClientiDataGrid)
 
-        GridUtility.ColoraColonne(OrdiniDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
+        ' GridUtility.ColoraColonne(OrdiniDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
 
     End Sub
 
@@ -121,35 +145,40 @@ Public Class Form1
 
         Dim idCli As Integer =
         CInt(OrdiniDataGrid.Rows(e.RowIndex).Cells("IDCliOrd").Value)
-        ResetFiltro(ClientiDataGrid)
+        GridFilter.ResetFiltro(ClientiDataGrid)
         GridFilter.FiltraDgv(
         ClientiDataGrid,
         $"IdClienti = {idCli}")
 
         ' Inserito modulo per scrivere meno
-        ColoraDgv(ClientiDataGrid)
+        '  ColoraDgv(ClientiDataGrid)
+        ColoraDgvCustomM(
+{Color.LightBlue, Color.LightGreen, ColSpec.Salta, Color.LightYellow},
+OrdiniDataGrid,
+ClientiDataGrid)
+
         'GridUtility.ColoraColonne(ClientiDataGrid, Colori.ColoreTipo.Giallo, Colori.ColoreTipo.VerdeChiaro, Colori.ColoreTipo.Azzurro)
 
     End Sub
 
-    Private Sub ResetFiltro(dgv As DataGridView)
-        Dim dv As DataView = Nothing
+    'Private Sub ResetFiltro(dgv As DataGridView)
+    '    Dim dv As DataView = Nothing
 
-        If TypeOf dgv.DataSource Is BindingSource Then
-            Dim bs = DirectCast(dgv.DataSource, BindingSource)
-            If bs.List IsNot Nothing AndAlso TypeOf bs.List Is DataView Then
-                dv = DirectCast(bs.List, DataView)
-            ElseIf TypeOf bs.DataSource Is DataTable Then
-                dv = DirectCast(DirectCast(bs.DataSource, DataTable).DefaultView, DataView)
-            End If
-        ElseIf TypeOf dgv.DataSource Is DataView Then
-            dv = DirectCast(dgv.DataSource, DataView)
-        ElseIf TypeOf dgv.DataSource Is DataTable Then
-            dv = DirectCast(DirectCast(dgv.DataSource, DataTable).DefaultView, DataView)
-        End If
+    '    If TypeOf dgv.DataSource Is BindingSource Then
+    '        Dim bs = DirectCast(dgv.DataSource, BindingSource)
+    '        If bs.List IsNot Nothing AndAlso TypeOf bs.List Is DataView Then
+    '            dv = DirectCast(bs.List, DataView)
+    '        ElseIf TypeOf bs.DataSource Is DataTable Then
+    '            dv = DirectCast(DirectCast(bs.DataSource, DataTable).DefaultView, DataView)
+    '        End If
+    '    ElseIf TypeOf dgv.DataSource Is DataView Then
+    '        dv = DirectCast(dgv.DataSource, DataView)
+    '    ElseIf TypeOf dgv.DataSource Is DataTable Then
+    '        dv = DirectCast(DirectCast(dgv.DataSource, DataTable).DefaultView, DataView)
+    '    End If
 
-        If dv IsNot Nothing Then dv.RowFilter = String.Empty
-    End Sub
+    '    If dv IsNot Nothing Then dv.RowFilter = String.Empty
+    'End Sub
 
 
     Private Sub RjButton1_Click(sender As Object, e As EventArgs) Handles RjButton1.Click
@@ -159,7 +188,11 @@ Public Class Form1
     Private Sub RjBtnRicarica_Click(sender As Object, e As EventArgs) Handles RjBtnRicarica.Click
         TxtEvidenzia.Text = ""
         TxtTutti.Text = ""
-        GridUtility.ResetColori(FatturaDataGrid)
+        ' ripristino sfondo bianco, testo nero
+        ResetColoriDgv(OrdiniDataGrid, ClientiDataGrid, FatturaDataGrid)
+
+        ' ricoloro le 3 colonne
+        'GridUtility.ResetColori(FatturaDataGrid)
 
         ' ColoraDgv è in un modulo, posso caricare qualsiasi datagrid
         ColoraDgv(OrdiniDataGrid, ClientiDataGrid, FatturaDataGrid)
@@ -176,7 +209,7 @@ Public Class Form1
     Private Sub RjBtnCerca_Click(sender As Object, e As EventArgs) Handles RjBtnCerca.Click
         Dim filtro As String = TxtEvidenzia.Text.Trim.ToUpper()
         If filtro = "" Then
-            RJMessageBox.Show("Inserisci un testo da evidenziare.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            IPMessageBox.Show("Inserisci un testo da evidenziare.", "Attenzione", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
         GridUtility.EvidenziaTesto(FatturaDataGrid, filtro)

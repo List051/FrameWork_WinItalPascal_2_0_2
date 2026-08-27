@@ -164,7 +164,7 @@ Partial Class FemInsClienti
         Me.OrdiniDataGrid.ReadOnly = True
         Me.OrdiniDataGrid.RowHeadersWidth = 51
         Me.OrdiniDataGrid.RowTemplate.Height = 24
-        Me.OrdiniDataGrid.Size = New System.Drawing.Size(1861, 150)
+        Me.OrdiniDataGrid.Size = New System.Drawing.Size(1861, 350)
         Me.OrdiniDataGrid.TabIndex = 1
         '
         'IDOrdDataGridViewTextBoxColumn
@@ -291,7 +291,6 @@ Partial Class FemInsClienti
         Me.TableAdapterManager.FatturaTableAdapter = Nothing
         Me.TableAdapterManager.MaterialeTableAdapter = Nothing
         Me.TableAdapterManager.OrdiniTableAdapter = Me.OrdiniTableAdapter
-        'Me.TableAdapterManager.RisultatoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = CreaFiltroDvg.WinDBGdRDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'RjBtnLog

@@ -1,24 +1,4 @@
 --------------------------------------------------------------------------------
-Data       : 17/06/2026 16:53:08
-Evento     : La Query è stata eseguita correttamente
-
---------------------------------------------------------------------------------
-Data       : 17/06/2026 16:53:28
-Evento     : Cliente con Id 7 Ordine di TASTIERA USB  salvato correttamente
-
---------------------------------------------------------------------------------
-Data       : 17/06/2026 16:53:55
-Evento     : La Query è stata eseguita correttamente
-
---------------------------------------------------------------------------------
-Data       : 17/06/2026 17:01:43
-Evento     : La Query è stata eseguita correttamente
-
---------------------------------------------------------------------------------
-Data       : 17/06/2026 17:05:20
-Evento     : Fattura 2 di NONNA PAPERA salvata correttamente.
-
---------------------------------------------------------------------------------
-Data       : 17/06/2026 17:07:57
-Evento     : La Query è stata eseguita correttamente
+Data       : 17/08/2026 06:35:03
+Evento     : Cliente con Id 3 a nome di ZIO GASTONE IL SUPERFORTUNATO  salvato correttamente
 
