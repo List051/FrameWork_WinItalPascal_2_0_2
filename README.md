@@ -3,11 +3,11 @@
   <img src="Logo.png" alt="Ital Pascal Logo" width="220">
 </p>
 
-<h1 align="center">WinItalPascal</h1>
+
 <p align="center">
   Libreria di utilità per applicazioni VB.NET WinForms
 </p>
-
+---
 <p align="center">
 
   <!-- NuGet -->
