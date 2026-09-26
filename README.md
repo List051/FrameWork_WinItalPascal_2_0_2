@@ -53,10 +53,6 @@ https://youtu.be/BsjiVc-j8qs
 # ' Inserito il progetto in GitHub
 [Visualizza la pagina Video.html](https://htmlpreview.github.io/?https://github.com/List051/FrameWork_WinItalPascal_2_0_2/blob/main/Video.html)
 
-Option download in local : https://List051.github.io/FrameWork_WinItalPascal_2_0_2/video.html
-ora è https://github.com/List051/FrameWork_WinItalPascal_2_0_2.git
-
-
 ---
 
 # 📘 README — **FrmGestFatture**
