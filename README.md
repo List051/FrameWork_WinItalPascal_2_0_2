@@ -19,7 +19,7 @@
   </a>
 
   <!-- GitHub -->
-  <img src="https://img.shields.io/github/stars/List051/WinItalPascal_Lib?style=for-the-badge" alt="Stars">
+  <img src="https://img.shields.io/github/stars/List051?style=for-the-badge" alt="Stars">
   <img src="https://img.shields.io/github/forks/List051/WinItalPascal_Lib?style=for-the-badge" alt="Forks">
   <img src="https://img.shields.io/github/issues/List051/WinItalPascal_Lib?style=for-the-badge" alt="Issues">
   <img src="https://img.shields.io/github/last-commit/List051/WinItalPascal_Lib?style=for-the-badge" alt="Last Commit">
