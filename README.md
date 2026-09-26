@@ -8,16 +8,38 @@
   Libreria di utilità per applicazioni VB.NET WinForms
 </p>
 
+<p align="center">
 
-[![NuGet Version](https://img.shields.io/nuget/v/WinItalPascal?style=for-the-badge)](https://www.nuget.org/packages/WinItalPascal) [![NuGet Downloads](https://img.shields.io/nuget/dt/WinItalPascal?style=for-the-badge)](https://www.nuget.org/packages/WinItalPascal) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://github.com/List051/WinItalPascal_Lib/blob/main/License.txt) [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-online-brightgreen?style=for-the-badge)](https://list051.github.io/WinVideoShowcase/)
+  <!-- NuGet -->
+  <a href="https://www.nuget.org/packages/WinItalPascal">
+    <img src="https://img.shields.io/nuget/v/WinItalPascal?style=for-the-badge" alt="NuGet Version">
+  </a>
+  <a href="https://www.nuget.org/packages/WinItalPascal">
+    <img src="https://img.shields.io/nuget/dt/WinItalPascal?style=for-the-badge" alt="NuGet Downloads">
+  </a>
+
+  <!-- GitHub -->
+  <img src="https://img.shields.io/github/stars/List051/WinItalPascal_Lib?style=for-the-badge" alt="Stars">
+  <img src="https://img.shields.io/github/forks/List051/WinItalPascal_Lib?style=for-the-badge" alt="Forks">
+  <img src="https://img.shields.io/github/issues/List051/WinItalPascal_Lib?style=for-the-badge" alt="Issues">
+  <img src="https://img.shields.io/github/last-commit/List051/WinItalPascal_Lib?style=for-the-badge" alt="Last Commit">
+
+  <!-- License -->
+  <a href="https://github.com/List051/WinItalPascal_Lib/blob/main/License.txt">
+    <img src="https://img.shields.io/github/license/List051/WinItalPascal_Lib?style=for-the-badge" alt="License">
+  </a>
+
+</p>
 
 
+## Esempio utilizzo Libreria per applicazioni VB.NET WinForms
 
+**WinItalPascal** è una libreria di componenti e utility pensata per velocizzare lo sviluppo di applicazioni desktop realizzate con:
 
+* VB.NET
+* Windows Forms
+* .NET Framework 4.8
 
-
-**README completo e finale**, con tutte le sezioni, immagini e spiegazioni integrate.  
-È pronto per essere pubblicato su GitHub o incluso nel tuo progetto VB.NET.
 
 # 🎬 Demo Video
 
@@ -28,7 +50,7 @@ https://youtu.be/BsjiVc-j8qs
 
 🎬 **Elenco video e versioni:**  
 
-# ' Qui modificherò il path quando avrò inserito il progetto in GitHub
+# ' Inserito il progetto in GitHub
 [Visualizza la pagina Video.html](https://htmlpreview.github.io/?https://github.com/List051/FrameWork_WinItalPascal_2_0_2/blob/main/Video.html)
 
 Option download in local : https://List051.github.io/FrameWork_WinItalPascal_2_0_2/video.html
